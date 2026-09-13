@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" fill="none">
+  <defs>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#0f172a" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.05" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Card -->
+  <rect x="10" y="10" width="380" height="420" rx="32" fill="url(#bgGlow)" stroke="url(#borderGrad)" stroke-width="2"/>
+  <rect x="10" y="10" width="380" height="420" rx="32" fill="url(#grid)"/>
+
+  <!-- Subtle Radial Glow behind avatar -->
+  <circle cx="200" cy="180" r="110" fill="url(#accentGlow)"/>
+
+  <!-- Neural Network Constellation Lines -->
+  <g stroke="#38bdf8" stroke-width="1" stroke-dasharray="3 3" opacity="0.4">
+    <line x1="80" y1="100" x2="130" y2="140" />
+    <line x1="130" y1="140" x2="200" y2="110" />
+    <line x1="200" y1="110" x2="270" y2="140" />
+    <line x1="270" y1="140" x2="320" y2="100" />
+    <line x1="130" y1="140" x2="150" y2="210" />
+    <line x1="270" y1="140" x2="250" y2="210" />
+  </g>
+
+  <!-- Node Dots -->
+  <circle cx="80" cy="100" r="4" fill="#06b6d4" />
+  <circle cx="130" cy="140" r="3" fill="#818cf8" />
+  <circle cx="200" cy="110" r="5" fill="#a855f7" />
+  <circle cx="270" cy="140" r="3" fill="#818cf8" />
+  <circle cx="320" cy="100" r="4" fill="#06b6d4" />
+
+  <!-- Clean Stylized Silhouette (No fake human face) -->
+  <g fill="#1e293b" stroke="#475569" stroke-width="2">
+    <!-- Head Circle -->
+    <circle cx="200" cy="165" r="50" fill="#0f172a" stroke="#6366f1" stroke-width="2.5" />
+    <!-- Shoulders/Bust Arc -->
+    <path d="M 120 285 C 120 235, 155 225, 200 225 C 245 225, 280 235, 280 285 Z" fill="#0f172a" stroke="#6366f1" stroke-width="2.5" />
+  </g>
+
+  <!-- Modern User/Camera Icon Badge -->
+  <circle cx="200" cy="165" r="24" fill="#1e1b4b" stroke="#06b6d4" stroke-width="1.5"/>
+  <!-- AI Sparkle / Brain glyph -->
+  <path d="M 200 152 L 202 161 L 211 163 L 202 165 L 200 174 L 198 165 L 189 163 L 198 161 Z" fill="#38bdf8"/>
+  <path d="M 212 153 L 213 158 L 218 159 L 213 160 L 212 165 L 211 160 L 206 159 L 211 158 Z" fill="#c084fc"/>
+
+  <!-- Elegant Status Banner -->
+  <rect x="60" y="325" width="280" height="38" rx="19" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+  <circle cx="82" cy="344" r="5" fill="#10b981" />
+  <text x="96" y="348" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#94a3b8" letter-spacing="0.5">SLIIT IT UNDERGRADUATE</text>
+
+  <!-- Helper Note -->
+  <text x="200" y="390" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#64748b" text-anchor="middle">
+    Drop photo.jpg into public/ to replace
+  </text>
+</svg>

@@ -1,0 +1,9 @@
+CV PLACEMENT INSTRUCTIONS
+=========================
+To enable the "Download CV" button on your portfolio:
+1. Export your real resume as a PDF.
+2. Name the file "cv.pdf".
+3. Save it directly into this folder: portfolio/public/cv.pdf
+
+The website is already configured to point directly to "/cv.pdf".
+Whenever visitors click "Download CV", your real resume will download automatically.
