@@ -203,7 +203,7 @@ export const Hero: React.FC = () => {
                   <img
                     src="/photo.jpg"
                     alt="Ravichandran Harini"
-                    className="w-full h-full object-cover object-center rounded-2xl transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top rounded-2xl transition-transform duration-500 group-hover:scale-105"
                     onError={() => setImageError(true)}
                   />
                 ) : (
