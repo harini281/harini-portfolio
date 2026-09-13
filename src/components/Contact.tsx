@@ -61,12 +61,12 @@ export const Contact: React.FC = () => {
       return;
     }
 
-    // Instead of faking a network send, show honest completed state with direct mailto option and setup guide
+    // Honest handling: validates inputs and displays validated summary with direct mail client transmission
     setSubmitted(true);
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText(PROFILE_DATA.emailPlaceholder);
+    navigator.clipboard.writeText(PROFILE_DATA.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
   };
@@ -81,14 +81,14 @@ export const Contact: React.FC = () => {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-3">
             <Mail className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Direct Communication</span>
+            <span>Connect &amp; Collaborate</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Touch</span>
+            Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Meaningful</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full mt-3"></div>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mt-4">
-            Interested in discussing AI/ML internship opportunities, collaborating on research projects, or reviewing my code? Let's connect.
+            I'm always interested in learning, collaborating, and exploring opportunities in AI, Machine Learning, Data Science and software development.
           </p>
         </div>
 
@@ -96,13 +96,13 @@ export const Contact: React.FC = () => {
           {/* Left Column: Social Links & Info Cards */}
           <div className="lg:col-span-5 space-y-5">
             {/* Quick Contact Info */}
-            <div className="glass-card rounded-2xl p-6 sm:p-7 space-y-4">
+            <div className="glass-card rounded-2xl p-6 sm:p-7 space-y-4 border border-slate-800/90 shadow-xl">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-cyan-400" />
                 <span>Contact Channels</span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                I am actively seeking internship opportunities in AI, Machine Learning, and Software Engineering. The fastest way to reach me is through LinkedIn or email.
+                Whether you have an internship opportunity, a research project to collaborate on, or just want to discuss machine learning architectures, feel free to reach out.
               </p>
 
               {/* LinkedIn Button Card */}
@@ -151,7 +151,7 @@ export const Contact: React.FC = () => {
                 </span>
               </a>
 
-              {/* Email Placeholder Card */}
+              {/* Email Card */}
               <div className="p-3.5 rounded-xl bg-dark-900 border border-slate-700/70 space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -159,41 +159,43 @@ export const Contact: React.FC = () => {
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-xs text-slate-400 font-mono block">Direct Email Placeholder</span>
-                      <span className="text-xs sm:text-sm font-mono text-slate-200 font-medium">
-                        {PROFILE_DATA.emailPlaceholder}
-                      </span>
+                      <span className="text-xs text-slate-400 font-mono block">Direct Email</span>
+                      <a
+                        href={`mailto:${PROFILE_DATA.email}`}
+                        className="text-xs sm:text-sm font-mono text-slate-200 font-medium hover:text-cyan-300 transition-colors"
+                      >
+                        {PROFILE_DATA.email}
+                      </a>
                     </div>
                   </div>
                   <button
                     onClick={copyEmail}
                     className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
-                    title="Copy email placeholder"
+                    title="Copy email to clipboard"
+                    type="button"
                   >
                     {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
-                <p className="text-[11px] text-slate-500 font-mono">
-                  * Replace with your active email address in <code className="text-slate-400">src/data/profile.ts</code>
-                </p>
               </div>
             </div>
 
-            {/* Email Backend Service Note */}
+            {/* Email Dispatch Note */}
             <div className="glass-card rounded-2xl p-5 border border-slate-800 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-cyan-400 font-semibold flex items-center gap-1.5">
-                  <Code className="w-3.5 h-3.5" /> Email Service Hookup
+                  <Code className="w-3.5 h-3.5" /> Frontend Inquiries
                 </span>
                 <button
+                  type="button"
                   onClick={() => setShowConfigModal(true)}
                   className="text-[11px] text-purple-400 hover:text-purple-300 underline font-mono"
                 >
-                  Setup Guide
+                  Integration Note
                 </button>
               </div>
               <p className="text-xs text-slate-400 leading-relaxed">
-                This portfolio validates input locally without faking an email dispatch. You can connect free serverless dispatchers like EmailJS, Formspree, or your own endpoint in minutes.
+                Submitting this form validates your message client-side. You can transmit directly through your local mail client or connect a serverless handler (such as Formspree or Web3Forms).
               </p>
             </div>
           </div>
@@ -205,9 +207,9 @@ export const Contact: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center text-emerald-400 mx-auto shadow-glow-sm">
                   <CheckCircle className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Form Input Validated!</h3>
+                <h3 className="text-2xl font-bold text-white">Message Ready!</h3>
                 <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                  Thank you, <span className="font-semibold text-cyan-300">{formData.name}</span>. Your message has been validated successfully.
+                  Thank you, <span className="font-semibold text-cyan-300">{formData.name}</span>. Your inquiry has been validated. Click below to launch your email client with your message prepared.
                 </p>
                 <div className="p-4 bg-dark-900/90 rounded-2xl border border-slate-800 text-left text-xs space-y-2 max-w-md mx-auto">
                   <p className="text-slate-400">
@@ -222,22 +224,23 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
                   <a
-                    href={`mailto:${PROFILE_DATA.emailPlaceholder}?subject=${encodeURIComponent(
+                    href={`mailto:${PROFILE_DATA.email}?subject=${encodeURIComponent(
                       formData.subject
                     )}&body=${encodeURIComponent(
                       `From: ${formData.name} (${formData.email})\n\n${formData.message}`
                     )}`}
-                    className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold shadow-md flex items-center gap-1.5"
+                    className="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold shadow-md flex items-center gap-2"
                   >
                     <Mail className="w-4 h-4" />
                     <span>Send via Mail Client</span>
                   </a>
                   <button
+                    type="button"
                     onClick={() => {
                       setSubmitted(false);
                       setFormData({ name: '', email: '', subject: '', message: '' });
                     }}
-                    className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium"
+                    className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium"
                   >
                     Reset Form
                   </button>
@@ -259,7 +262,7 @@ export const Contact: React.FC = () => {
                         setFormData({ ...formData, name: e.target.value });
                         if (errors.name) setErrors({ ...errors, name: '' });
                       }}
-                      placeholder="e.g. Eleanor Vance"
+                      placeholder="e.g. Recruiter / Collaborator"
                       className={`w-full px-3.5 py-2.5 rounded-xl bg-dark-900 border text-slate-100 text-sm focus:outline-none focus:ring-1 transition-all ${
                         errors.name
                           ? 'border-rose-500/80 focus:ring-rose-500'
@@ -306,7 +309,7 @@ export const Contact: React.FC = () => {
                       setFormData({ ...formData, subject: e.target.value });
                       if (errors.subject) setErrors({ ...errors, subject: '' });
                     }}
-                    placeholder="e.g. Internship Opportunity / Collaboration"
+                    placeholder="e.g. AI / ML Internship Opportunity"
                     className={`w-full px-3.5 py-2.5 rounded-xl bg-dark-900 border text-slate-100 text-sm focus:outline-none focus:ring-1 transition-all ${
                       errors.subject
                         ? 'border-rose-500/80 focus:ring-rose-500'
@@ -329,7 +332,7 @@ export const Contact: React.FC = () => {
                       setFormData({ ...formData, message: e.target.value });
                       if (errors.message) setErrors({ ...errors, message: '' });
                     }}
-                    placeholder="Hello Harini, I came across your UrbanFlow AI and TravelWise projects..."
+                    placeholder="Hello Harini, I reviewed your UrbanFlow AI and TravelWise projects..."
                     className={`w-full px-3.5 py-2.5 rounded-xl bg-dark-900 border text-slate-100 text-sm focus:outline-none focus:ring-1 transition-all resize-y ${
                       errors.message
                         ? 'border-rose-500/80 focus:ring-rose-500'
@@ -355,16 +358,17 @@ export const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* Backend Integration Guide Modal */}
+      {/* Integration Note Modal */}
       {showConfigModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
           <div className="bg-dark-900 border border-slate-700 rounded-2xl p-6 max-w-lg w-full shadow-2xl relative space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-cyan-400 font-semibold">
                 <AlertCircle className="w-5 h-5" />
-                <h3 className="text-white text-base">Connecting an Email Dispatch Service</h3>
+                <h3 className="text-white text-base">Form Delivery Architecture</h3>
               </div>
               <button
+                type="button"
                 onClick={() => setShowConfigModal(false)}
                 className="text-slate-400 hover:text-white text-xs font-mono bg-slate-800 px-2 py-1 rounded"
               >
@@ -373,31 +377,21 @@ export const Contact: React.FC = () => {
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed">
-              To deliver contact form submissions directly into your personal email inbox, you can choose any of these free options:
+              This portfolio validates form fields locally without needing a paid backend server. If you want submissions to route automatically into your inbox in the future:
             </p>
 
             <div className="space-y-2 text-xs">
               <div className="p-3 bg-slate-950 rounded-xl border border-slate-800">
-                <strong className="text-cyan-300 block mb-1">Option 1: Formspree (Easiest - 2 minutes)</strong>
+                <strong className="text-cyan-300 block mb-1">Option: Formspree / Web3Forms</strong>
                 <p className="text-slate-400">
-                  1. Sign up at formspree.io and create a free form.
-                  <br />
-                  2. Update form action to <code className="text-slate-300">https://formspree.io/f/YOUR_FORM_ID</code>.
-                </p>
-              </div>
-
-              <div className="p-3 bg-slate-950 rounded-xl border border-slate-800">
-                <strong className="text-purple-300 block mb-1">Option 2: EmailJS (Client-side JS)</strong>
-                <p className="text-slate-400">
-                  Run <code className="text-slate-300">npm install @emailjs/browser</code> and invoke{' '}
-                  <code className="text-slate-300">emailjs.send(...)</code> inside{' '}
-                  <code className="text-slate-300">handleSubmit</code>.
+                  Simply register at formspree.io or web3forms.com and add the endpoint to your form action or `.env`.
                 </p>
               </div>
             </div>
 
             <div className="flex justify-end pt-2">
               <button
+                type="button"
                 onClick={() => setShowConfigModal(false)}
                 className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-medium"
               >

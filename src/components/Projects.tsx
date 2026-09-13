@@ -11,11 +11,12 @@ import {
   CloudSun,
   Camera,
   Layers,
+  ArrowRight,
 } from 'lucide-react';
 import { PROJECTS } from '../data/projects';
 import { Project } from '../types/portfolio';
 
-// SVG Visual Wireframe representation for each project's thumbnail
+// Visual icon wireframe for each project's thumbnail
 const ProjectThumbnail: React.FC<{ project: Project }> = ({ project }) => {
   const renderIcon = () => {
     switch (project.id) {
@@ -38,9 +39,9 @@ const ProjectThumbnail: React.FC<{ project: Project }> = ({ project }) => {
 
   return (
     <div
-      className={`w-full h-48 sm:h-52 rounded-xl bg-gradient-to-br ${project.gradient} border border-slate-700/60 relative overflow-hidden flex items-center justify-center p-6 group-hover:border-purple-500/50 transition-all`}
+      className={`w-full h-48 sm:h-52 rounded-xl bg-gradient-to-br ${project.gradient} border border-slate-700/60 relative overflow-hidden flex items-center justify-center p-6 transition-all duration-300 group-hover:border-purple-500/50`}
     >
-      {/* Abstract geometric grid lines */}
+      {/* Abstract subtle grid lines */}
       <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:16px_16px]" />
 
       {/* Decorative pulse ring */}
@@ -48,11 +49,11 @@ const ProjectThumbnail: React.FC<{ project: Project }> = ({ project }) => {
 
       {/* Central Visual Icon & Title Badge */}
       <div className="relative z-10 flex flex-col items-center text-center space-y-2">
-        <div className="p-3.5 rounded-2xl bg-dark-900/80 backdrop-blur-md border border-slate-700/80 shadow-lg">
+        <div className="p-3.5 rounded-2xl bg-dark-900/85 backdrop-blur-md border border-slate-700/80 shadow-lg group-hover:scale-105 transition-transform">
           {renderIcon()}
         </div>
-        <span className="text-xs font-mono font-medium text-slate-200 tracking-wider bg-dark-950/70 px-3 py-1 rounded-full border border-slate-800">
-          {project.metricsBadge || 'Intelligent Architecture'}
+        <span className="text-xs font-mono font-medium text-slate-200 tracking-wider bg-dark-950/80 px-3 py-1 rounded-full border border-slate-800">
+          {project.metricsBadge || 'AI System'}
         </span>
       </div>
 
@@ -60,7 +61,7 @@ const ProjectThumbnail: React.FC<{ project: Project }> = ({ project }) => {
       {project.isFlagship && (
         <div className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-[11px] font-semibold backdrop-blur-md shadow-sm">
           <Crown className="w-3.5 h-3.5 text-amber-400" />
-          <span>Flagship Project</span>
+          <span>FLAGSHIP PROJECT</span>
         </div>
       )}
     </div>
@@ -82,11 +83,11 @@ export const Projects: React.FC = () => {
             <span>Featured Engineering</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Projects</span>
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Projects</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full mt-3"></div>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mt-4">
-            Real-world systems spanning large-scale data analytics, multi-agent AI architectures, cybersecurity telemetry, and deep learning.
+            Six selected projects spanning mobility intelligence, multi-agent AI applications, cybersecurity telemetry, and computer vision.
           </p>
         </div>
 
@@ -94,7 +95,7 @@ export const Projects: React.FC = () => {
         {PROJECTS.filter((p) => p.isFlagship).map((project) => (
           <div
             key={project.id}
-            className="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border-2 border-blue-500/40 shadow-2xl relative overflow-hidden mb-12 group"
+            className="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border-2 border-blue-500/40 shadow-2xl relative overflow-hidden mb-12 group hover:border-blue-400/60 hover:-translate-y-1 transition-all duration-300"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Visual Graphic */}
@@ -105,10 +106,10 @@ export const Projects: React.FC = () => {
               {/* Description & Metrics */}
               <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex items-center gap-2 mb-1.5">
                     <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/40 flex items-center gap-1">
-                      <Crown className="w-3 h-3 text-amber-400" />
-                      FLAGSHIP DATA SCIENCE &amp; ML PROJECT
+                      <Crown className="w-3.5 h-3.5 text-amber-400" />
+                      FLAGSHIP PROJECT
                     </span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -125,7 +126,7 @@ export const Projects: React.FC = () => {
                 {/* Key Points Bullet List */}
                 <div className="space-y-2 pt-2 border-t border-slate-800/80">
                   <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
-                    Core Technical Accomplishments:
+                    Core Technical Areas:
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {project.keyPoints.map((point, idx) => (
@@ -155,26 +156,24 @@ export const Projects: React.FC = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md shadow-blue-900/30 transition-all flex items-center gap-2"
+                    className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md shadow-blue-900/30 transition-all flex items-center gap-2 group/btn"
                   >
                     <Github className="w-4 h-4" />
                     <span>View Repository</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                   {project.liveDemoUrl ? (
                     <a
                       href={project.liveDemoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-xl bg-dark-900 text-slate-300 hover:text-white border border-slate-700 text-xs font-medium transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-xl bg-dark-900 text-slate-300 hover:text-white border border-slate-700 text-xs font-medium transition-all flex items-center gap-2 group/btn"
                     >
                       <ExternalLink className="w-4 h-4 text-cyan-400" />
                       <span>Live Demo</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </a>
-                  ) : (
-                    <span className="px-3 py-2 rounded-xl bg-slate-900/50 text-slate-500 border border-slate-800 text-[11px] font-mono">
-                      Research &amp; Benchmark Codebase
-                    </span>
-                  )}
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -186,7 +185,7 @@ export const Projects: React.FC = () => {
           {PROJECTS.filter((p) => !p.isFlagship).map((project) => (
             <div
               key={project.id}
-              className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 flex flex-col justify-between border border-slate-800/80 relative group"
+              className="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between border border-slate-800/80 hover:border-purple-500/40 hover:-translate-y-1.5 hover:shadow-glow-sm transition-all duration-300 relative group"
             >
               <div className="space-y-4">
                 {/* Thumbnail Graphic */}
@@ -235,20 +234,22 @@ export const Projects: React.FC = () => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2 px-3 rounded-lg bg-dark-900 hover:bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700/80 hover:border-slate-600 transition-all flex items-center justify-center gap-1.5"
+                  className="flex-1 py-2 px-3 rounded-lg bg-dark-900 hover:bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700/80 hover:border-slate-600 transition-all flex items-center justify-center gap-1.5 group/btn"
                 >
                   <Github className="w-3.5 h-3.5" />
                   <span>GitHub</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
                 {project.liveDemoUrl ? (
                   <a
                     href={project.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2 px-3 rounded-lg bg-dark-900 hover:bg-slate-800 text-cyan-400 text-xs font-medium border border-slate-700/80 transition-all flex items-center gap-1"
+                    className="py-2 px-3 rounded-lg bg-dark-900 hover:bg-slate-800 text-cyan-400 text-xs font-medium border border-slate-700/80 transition-all flex items-center gap-1 group/btn"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     <span>Demo</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 ) : null}
               </div>
@@ -256,7 +257,7 @@ export const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* View All Projects on GitHub button */}
+        {/* View All Projects button */}
         <div className="mt-14 text-center">
           <a
             href="https://github.com/harini281?tab=repositories"
@@ -265,8 +266,8 @@ export const Projects: React.FC = () => {
             className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-dark-900 text-slate-200 font-medium text-sm border border-slate-700 hover:border-cyan-400 hover:text-white shadow-lg hover:shadow-cyan-900/20 transition-all group"
           >
             <Github className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
-            <span>View All Repositories on GitHub</span>
-            <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+            <span>View All Projects</span>
+            <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </div>

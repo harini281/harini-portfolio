@@ -43,11 +43,11 @@ export const TechStack: React.FC = () => {
             <span>Technical Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Technologies &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Tools</span>
+            Skills &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Technologies</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full mt-3"></div>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mt-4">
-            An honest overview of technologies, libraries, and frameworks I have worked with through academic projects, professional data workflows, and active self-directed learning.
+            Technologies I've worked with and am currently developing my skills in.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export const TechStack: React.FC = () => {
                 : 'bg-dark-900/80 text-slate-400 hover:text-white border border-slate-800'
             }`}
           >
-            Generative &amp; Agentic AI
+            Generative / Agentic AI
           </button>
           <button
             onClick={() => setActiveTab('Backend')}
@@ -91,7 +91,7 @@ export const TechStack: React.FC = () => {
                 : 'bg-dark-900/80 text-slate-400 hover:text-white border border-slate-800'
             }`}
           >
-            Backend &amp; APIs
+            Backend / APIs
           </button>
         </div>
 
@@ -111,14 +111,16 @@ export const TechStack: React.FC = () => {
                   <div>
                     <h3 className="text-base font-bold text-white tracking-tight">{category.title}</h3>
                     <span className="text-[11px] text-slate-400 font-mono">
-                      {category.skills.length} tools / concepts
+                      {category.skills.length} tools &amp; concepts
                     </span>
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-400 leading-relaxed mb-5">
-                  {category.description}
-                </p>
+                {category.description && (
+                  <p className="text-xs text-slate-400 leading-relaxed mb-5">
+                    {category.description}
+                  </p>
+                )}
 
                 {/* Skill Badges */}
                 <div className="flex flex-wrap gap-2">

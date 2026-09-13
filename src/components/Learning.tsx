@@ -1,6 +1,6 @@
 import React from 'react';
-import { BookOpen, Sparkles, Compass, CheckCircle2, Flame } from 'lucide-react';
-import { CURRENTLY_LEARNING } from '../data/skills';
+import { BookOpen, Sparkles } from 'lucide-react';
+import { CURRENTLY_EXPLORING } from '../data/skills';
 
 export const Learning: React.FC = () => {
   return (
@@ -13,47 +13,31 @@ export const Learning: React.FC = () => {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-950/40 border border-violet-800/40 text-violet-300 text-xs font-mono uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-violet-400" />
-            <span>Continuous Upskilling</span>
+            <span>Active Knowledge Growth</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
             Currently <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Exploring</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full mt-3"></div>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mt-4">
-            Topics and methodologies I am actively studying, implementing in experimental branches, or preparing for upcoming system builds.
+            Emerging concepts, frameworks, and methodologies I am actively studying, practicing in experimental codebases, and preparing for future systems.
           </p>
         </div>
 
         {/* Learning Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {CURRENTLY_LEARNING.map((item, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {CURRENTLY_EXPLORING.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 border border-slate-800/80 hover:border-violet-500/40 transition-all flex flex-col justify-between group"
+              className="glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80 hover:border-violet-500/40 transition-all flex flex-col justify-between group"
             >
               <div>
-                {/* Header Tag and Category */}
-                <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="flex items-center justify-between gap-2 mb-2.5">
                   <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-dark-900 text-slate-400 border border-slate-800">
                     {item.category}
                   </span>
-                  <span
-                    className={`text-[11px] font-medium px-2.5 py-0.5 rounded-full flex items-center gap-1 ${
-                      item.status === 'In Progress'
-                        ? 'bg-purple-950/80 text-purple-300 border border-purple-800/60'
-                        : item.status === 'Active Exploration'
-                        ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/60'
-                        : 'bg-slate-900 text-slate-400 border border-slate-800'
-                    }`}
-                  >
-                    {item.status === 'In Progress' ? (
-                      <Flame className="w-3 h-3 text-purple-400" />
-                    ) : item.status === 'Active Exploration' ? (
-                      <Compass className="w-3 h-3 text-cyan-400" />
-                    ) : (
-                      <CheckCircle2 className="w-3 h-3 text-slate-400" />
-                    )}
-                    {item.status}
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-purple-950/70 text-purple-300 border border-purple-800/50">
+                    Exploring
                   </span>
                 </div>
 
@@ -61,17 +45,18 @@ export const Learning: React.FC = () => {
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-slate-400 leading-relaxed mt-2">
-                  {item.description}
-                </p>
+                {item.description && (
+                  <p className="text-xs text-slate-400 leading-relaxed mt-2">
+                    {item.description}
+                  </p>
+                )}
               </div>
 
-              {/* Progress Indicator */}
-              <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <div className="pt-3 mt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500 font-mono">
                 <span className="flex items-center gap-1">
-                  <BookOpen className="w-3 h-3 text-violet-400" /> Self-Directed &amp; Coursework
+                  <BookOpen className="w-3 h-3 text-violet-400" /> Academic &amp; Self-Study
                 </span>
-                <span className="text-violet-400 font-semibold">Active</span>
+                <span className="text-violet-400 font-medium">In Progress</span>
               </div>
             </div>
           ))}

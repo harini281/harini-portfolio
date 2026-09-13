@@ -15,7 +15,7 @@ export interface Project {
 
 export interface SkillCategory {
   title: string;
-  description: string;
+  description?: string;
   icon: string;
   skills: {
     name: string;
@@ -26,11 +26,14 @@ export interface SkillCategory {
 export interface Experience {
   role: string;
   company: string;
-  location: string;
-  period: string;
-  type: string;
-  description: string[];
-  skillsGained: string[];
+  location?: string;
+  employment?: string;
+  period?: string;
+  status?: string;
+  summary?: string;
+  bullets: string[];
+  skillsGained?: string[];
+  writerProfileUrl?: string;
 }
 
 export interface PersonalStrength {
@@ -43,6 +46,16 @@ export interface PersonalStrength {
 export interface LearningTopic {
   title: string;
   category: string;
-  status: 'In Progress' | 'Active Exploration' | 'Next Milestone';
-  description: string;
+  status?: 'In Progress' | 'Active Exploration' | 'Next Milestone';
+  description?: string;
+}
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  issuedDate: string;
+  credentialUrl?: string;
+  skills?: string[];
+  category?: 'AI & Machine Learning' | 'Software Engineering' | 'Productivity';
+  badgeIcon?: string;
 }

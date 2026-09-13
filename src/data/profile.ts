@@ -4,11 +4,14 @@ export const PROFILE_DATA = {
   name: 'Ravichandran Harini',
   preferredName: 'Harini',
   tagline: 'AI / ML Undergraduate | Machine Learning Enthusiast | AI Application Developer',
+  heroBadge: 'SLIIT AI Undergraduate • Data Processing Associate',
   institution: 'Sri Lanka Institute of Information Technology (SLIIT)',
   degree: 'BSc (Hons) in Information Technology',
-  currentRole: 'Data Processing Associate at BMI',
-  currentPeriod: 'May 2026 – Present',
-  emailPlaceholder: 'YOUR_PUBLIC_EMAIL', // Replace with your real public email e.g. harini.ravichandran@example.com
+  specialization: 'Artificial Intelligence',
+  year: 'Third-year undergraduate',
+  location: 'Sri Lanka',
+  currentRole: 'Data Processing Associate',
+  email: 'ravichandranharini65@gmail.com',
   githubUsername: 'harini281',
   githubUrl: 'https://github.com/harini281',
   linkedinUrl: 'https://www.linkedin.com/in/ravichandran-harini-601858354/',
@@ -16,17 +19,41 @@ export const PROFILE_DATA = {
   photoPlaceholder: '/photo-placeholder.svg',
 
   rotatingHeadlines: [
-    'Building Intelligent Systems',
     'Exploring Machine Learning',
-    'Turning Data Into Insights',
-    'Learning Agentic AI',
     'Building AI-Powered Applications',
+    'Learning Agentic AI & RAG',
+    'Turning Data Into Insights',
+    'Exploring Computer Vision',
+    'Always Learning. Always Building.',
   ],
 
+  heroDescription:
+    'I enjoy turning data and ideas into practical intelligent applications. My interests span Machine Learning, Data Science, Computer Vision, Generative AI and intelligent software development. I am currently exploring Agentic AI, RAG and modern AI application development while gaining professional experience in data processing.',
+
+  heroInfo: {
+    location: 'Sri Lanka',
+    role: 'Data Processing Associate',
+    opportunity: 'Open to AI/ML, research and software opportunities',
+  },
+
   aboutBio: [
-    "I'm an Information Technology undergraduate at SLIIT with a dedicated focus on Artificial Intelligence, Machine Learning, Data Science, and intelligent software engineering.",
-    "I love the process of transforming messy raw data and ideas into practical, dependable applications that solve genuine problems. Rather than viewing machine learning in a silo, I'm passionate about the full lifecycle—from data preprocessing and feature engineering to model evaluation, robust backend APIs, and modern responsive user interfaces.",
-    "Right now, I am deeply engaged in exploring the frontiers of Agentic AI, Retrieval-Augmented Generation (RAG), LangChain, and LangGraph. My goal is to grow into an AI/ML-focused Software Engineer who builds robust, human-centered intelligent systems that deliver measurable value.",
+    'I am a third-year undergraduate specializing in Artificial Intelligence at SLIIT with a strong passion for AI, Machine Learning, Data Science, and Intelligent Systems.',
+    'My interests lie in building innovative solutions that solve real-world problems through data-driven decision-making, predictive analytics, and intelligent automation. I enjoy exploring emerging technologies including Artificial Intelligence, Robotics, Computer Vision, Generative AI, and Agentic AI.',
+    'Through academic projects, internships, professional experience, and self-directed learning, I have gained hands-on experience in Python, Machine Learning, Data Analysis, Full-Stack Development, Database Systems, and Software Engineering principles.',
+    'I have worked on projects involving AI-powered applications, recommendation systems, weather analytics, image classification, machine-learning models, data analytics, and web-based solutions.',
+    'I continue to expand my technical knowledge through practical projects, certifications, university studies, and research-driven learning.',
+  ],
+
+  technicalInterests: [
+    'Artificial Intelligence',
+    'Machine Learning',
+    'Data Science & Analytics',
+    'Computer Vision',
+    'Generative AI',
+    'Agentic AI',
+    'Robotics',
+    'Full-Stack Development',
+    'Business Intelligence',
   ],
 
   personalStrengths: [
@@ -38,19 +65,19 @@ export const PROFILE_DATA = {
     },
     {
       title: 'Continuous Learner',
-      tagline: 'Curious & Fast-Paced',
-      description: 'Consistently experimenting with state-of-the-art tools—from PyTorch and Scikit-learn to LangChain and Agentic AI patterns.',
+      tagline: 'Curious & Adaptable',
+      description: 'Consistently experimenting with state-of-the-art tools across machine learning, agentic workflows, and emerging AI paradigms.',
       icon: 'Sparkles',
     },
     {
       title: 'Creative Thinker',
       tagline: 'Applied Intelligence',
-      description: 'Focused on designing intuitive, responsive interfaces that make complex AI predictions easy for users to understand.',
+      description: 'Focused on designing intuitive, responsive interfaces that make complex AI predictions clear and accessible.',
       icon: 'Lightbulb',
     },
     {
       title: 'Team Player',
-      tagline: 'Collaborative & Adaptable',
+      tagline: 'Collaborative & Communicative',
       description: 'Enjoys cross-functional collaboration, clear documentation, code reviews, and building together toward shared milestones.',
       icon: 'Users',
     },

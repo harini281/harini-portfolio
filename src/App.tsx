@@ -6,6 +6,7 @@ import { Experience } from './components/Experience';
 import { TechStack } from './components/TechStack';
 import { Projects } from './components/Projects';
 import { Learning } from './components/Learning';
+import { Certifications } from './components/Certifications';
 import { GitHubStats } from './components/GitHubStats';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -24,6 +25,7 @@ export const App: React.FC = () => {
         <TechStack />
         <Projects />
         <Learning />
+        <Certifications />
         <GitHubStats />
         <Contact />
       </main>
