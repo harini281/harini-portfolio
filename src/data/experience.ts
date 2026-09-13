@@ -3,7 +3,7 @@ import { Experience } from '../types/portfolio';
 export const WORK_EXPERIENCE: Experience[] = [
   {
     role: 'Data Processing Associate',
-    company: 'Soundmouse',
+    company: 'Soundmouse (BMI by Soundmouse)',
     location: 'Sri Lanka',
     employment: 'Full-time',
     period: 'Jun 2026 – Present',

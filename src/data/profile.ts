@@ -4,13 +4,13 @@ export const PROFILE_DATA = {
   name: 'Ravichandran Harini',
   preferredName: 'Harini',
   tagline: 'AI / ML Undergraduate | Machine Learning Enthusiast | AI Application Developer',
-  heroBadge: 'SLIIT AI Undergraduate • Data Processing Associate',
+  heroBadge: 'SLIIT AI Undergraduate • Data Processing Associate at Soundmouse',
   institution: 'Sri Lanka Institute of Information Technology (SLIIT)',
   degree: 'BSc (Hons) in Information Technology',
   specialization: 'Artificial Intelligence',
   year: 'Third-year undergraduate',
   location: 'Sri Lanka',
-  currentRole: 'Data Processing Associate',
+  currentRole: 'Data Processing Associate at Soundmouse',
   email: 'ravichandranharini65@gmail.com',
   githubUsername: 'harini281',
   githubUrl: 'https://github.com/harini281',
@@ -28,11 +28,11 @@ export const PROFILE_DATA = {
   ],
 
   heroDescription:
-    'I enjoy turning data and ideas into practical intelligent applications. My interests span Machine Learning, Data Science, Computer Vision, Generative AI and intelligent software development. I am currently exploring Agentic AI, RAG and modern AI application development while gaining professional experience in data processing.',
+    'I enjoy turning data and ideas into practical intelligent applications. My interests span Machine Learning, Data Science, Computer Vision, Generative AI and intelligent software development. I am currently exploring Agentic AI, RAG and modern AI application development while gaining professional experience in data processing at Soundmouse.',
 
   heroInfo: {
     location: 'Sri Lanka',
-    role: 'Data Processing Associate',
+    role: 'Data Processing Associate at Soundmouse',
     opportunity: 'Open to AI/ML, research and software opportunities',
   },
 
