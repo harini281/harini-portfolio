@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Github, Linkedin, Sparkles } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
 import { PROFILE_DATA } from '../data/profile';
 
 export const Footer: React.FC = () => {
@@ -47,6 +47,14 @@ export const Footer: React.FC = () => {
             className="p-2 rounded-xl bg-dark-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-all shadow-sm"
           >
             <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href={`mailto:${PROFILE_DATA.email}`}
+            aria-label="Email Harini"
+            className="p-2 rounded-xl bg-dark-900 border border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm"
+            title={PROFILE_DATA.email}
+          >
+            <Mail className="w-4 h-4" />
           </a>
           <button
             onClick={scrollToTop}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Sparkles } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
 import { PROFILE_DATA } from '../data/profile';
 
 interface NavItem {
@@ -132,6 +132,14 @@ export const Navbar: React.FC = () => {
               <Linkedin className="w-4 h-4" />
             </a>
             <a
+              href={`mailto:${PROFILE_DATA.email}`}
+              aria-label="Send Email"
+              className="p-2 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 border border-transparent hover:border-slate-700/60 transition-all"
+              title={PROFILE_DATA.email}
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+            <a
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
@@ -200,6 +208,13 @@ export const Navbar: React.FC = () => {
             >
               <Linkedin className="w-4 h-4 text-cyan-400" />
               <span>LinkedIn</span>
+            </a>
+            <a
+              href={`mailto:${PROFILE_DATA.email}`}
+              className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-slate-900 text-slate-200 text-xs border border-slate-800 hover:border-slate-700 hover:text-emerald-400"
+            >
+              <Mail className="w-4 h-4 text-emerald-400" />
+              <span>Email</span>
             </a>
           </div>
         </div>

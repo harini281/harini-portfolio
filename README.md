@@ -6,6 +6,7 @@ A modern personal portfolio showcasing my AI/ML projects, technical skills, prof
 
 - **GitHub**: [https://github.com/harini281](https://github.com/harini281)
 - **LinkedIn**: [https://www.linkedin.com/in/ravichandran-harini-601858354/](https://www.linkedin.com/in/ravichandran-harini-601858354/)
+- **Email**: [ravichandranharini65@gmail.com](mailto:ravichandranharini65@gmail.com)
 
 ---
 
