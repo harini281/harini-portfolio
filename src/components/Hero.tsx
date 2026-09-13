@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [imageError, setImageError] = useState(false);
-  const [cvExists, setCvExists] = useState(false);
+  const [cvExists, setCvExists] = useState(true);
 
   // Check if cv.pdf actually exists in public folder
   useEffect(() => {
