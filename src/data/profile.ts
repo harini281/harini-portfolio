@@ -15,7 +15,7 @@ export const PROFILE_DATA = {
   githubUsername: 'harini281',
   githubUrl: 'https://github.com/harini281',
   linkedinUrl: 'https://www.linkedin.com/in/ravichandran-harini-601858354/',
-  cvPath: '/cv.pdf',
+  cvPath: '/Ravichandran_Harini_CV.pdf',
   photoPlaceholder: '/photo-placeholder.svg',
 
   rotatingHeadlines: [
